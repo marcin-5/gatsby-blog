@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-const useConfigQuery = () => {
+export const useConfigQuery = () => {
   const data = useStaticQuery(graphql`
     query ConfigQuery {
       markdownRemark(frontmatter: { type: { eq: "config" } }) {
