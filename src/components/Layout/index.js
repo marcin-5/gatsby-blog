@@ -1,7 +1,22 @@
 import React from "react"
+import { ThemeProvider } from "styled-components"
 
-const index = () => {
-  return <div>index</div>
+// hooks
+import { useMetaDataQuery } from "hooks/useMetaDataQuery"
+
+// styles
+import { GlobalStyles, lightTheme, darkTheme } from "styles/GlobalStyles"
+
+const Layout = ({ children }) => {
+  const data = useMetaDataQuery()
+  console.log(data)
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyles />
+      <div>index</div>
+      {children}
+    </ThemeProvider>
+  )
 }
 
-export default index
+export default Layout
