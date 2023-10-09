@@ -1,6 +1,6 @@
 ---
 type: "config"
-logo: "../images/gatsby-icon.png"
+logo: "../images/blog-logo.svg"
 menu:
   - id: "menu-item-1"
     name: "About"
