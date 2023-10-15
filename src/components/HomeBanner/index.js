@@ -1,15 +1,23 @@
 import React from "react"
 import { Link } from "gatsby"
+// hooks
+import useBannerQuery from "hooks/useBannerQuery"
 
 const HomeBanner = () => {
+  const {
+    bannerImage,
+    bannerImageText,
+    bannerImageBtnText,
+    bannerImageBtnLink,
+  } = useBannerQuery()
   return (
     <div>
       <div>
         <div>
-          <h2>Title</h2>
+          <h2>{bannerImageText}</h2>
         </div>
-        <Link>
-          <button>Click Me</button>
+        <Link to={bannerImageBtnLink}>
+          <button>{bannerImageBtnText}</button>
         </Link>
       </div>
     </div>
