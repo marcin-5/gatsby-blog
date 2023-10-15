@@ -10,7 +10,6 @@ const Hamburger = ({ menuOpen, setMenuOpen }) => {
       onClick={() => setMenuOpen(prev => !prev)}
     >
       <div />
-      <div />
     </HamburgerIcon>
   )
 }

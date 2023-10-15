@@ -1,16 +1,55 @@
 import * as React from "react"
+import { graphql } from "gatsby"
 
 // components
 import Layout from "components/Layout"
 import Seo from "components/SEO"
+import HomeBanner from "components/HomeBanner"
+import BlogPostCard from "components/BlogPostCard"
 
-const IndexPage = () => <Layout>Home Page</Layout>
+const IndexPage = ({ data }) => {
+  console.log("data", data)
+  return (
+    <Layout>
+      <HomeBanner />
+      <main>
+        <BlogPostCard />
+      </main>
+    </Layout>
+  )
+}
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => <Seo title="Home" />
 
 export default IndexPage
+
+export const query = graphql`
+  query blogListQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "post" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      edges {
+        node {
+          fields {
+            readingTime {
+              text
+            }
+          }
+          frontmatter {
+            date
+            title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 200, maxHeight: 200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
