@@ -15,6 +15,7 @@ export const TextWrapper = styled.div`
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  margin-left: -200px;
   height: 100%;
 
   h2 {
@@ -22,7 +23,6 @@ export const TextWrapper = styled.div`
     font-size: 1.5rem;
     text-align: center;
     margin: 20px;
-    margin-top: -50px;
 
     @media screen and (min-width: 768) {
       font-size: 2.8rem;
