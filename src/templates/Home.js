@@ -1,18 +1,23 @@
-import * as React from "react"
 import { graphql } from "gatsby"
+import React from "react"
 
 // components
-import Layout from "components/Layout"
-import Seo from "components/SEO"
-import HomeBanner from "components/HomeBanner"
 import BlogPostCard from "components/BlogPostCard"
+import HomeBanner from "components/HomeBanner"
+import Layout from "components/Layout"
+import PageNavigation from "components/PageNavigation"
+import Seo from "components/SEO"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout>
       <HomeBanner />
       <main>
+        <PageNavigation
+          currentPage={pageContext.currentPage}
+          numPages={pageContext.numPages}
+        />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
