@@ -16,7 +16,6 @@ import { GlobalStyles, lightTheme, darkTheme } from "styles/GlobalStyles"
 const Layout = ({ children }) => {
   const [darkMode] = useContext(ModeContext)
   const data = useMetaDataQuery()
-  console.log(data)
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
