@@ -5,7 +5,10 @@ export const useConfigQuery = () => {
     query ConfigQuery {
       markdownRemark(frontmatter: { type: { eq: "config" } }) {
         frontmatter {
-          logo {
+          logodm {
+            publicURL
+          }
+          logolm {
             publicURL
           }
           menu {

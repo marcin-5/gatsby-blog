@@ -5,9 +5,11 @@ import NunitoBlack from "fonts/Nunito-Black.ttf"
 export const colors = {
   white: "#fff",
   bgDark: "#151510",
+  bgLight: "#fefcfc",
   deepDarkGrey: "#404040",
   myColor1: "#332600",
   myColor2: "#ffcc99",
+  myColor2L: "#995555",
   myColor3: "#fff2e6",
 }
 export const darkTheme = {
@@ -21,10 +23,10 @@ export const darkTheme = {
 }
 export const lightTheme = {
   colors: {
-    background: colors.white,
+    background: colors.bgLight,
     menuBackground: colors.myColor3,
     textDark: colors.myColor1,
-    textMain: colors.myColor2,
+    textMain: colors.myColor2L,
     textSecondary: colors.deepDarkGrey,
   },
 }

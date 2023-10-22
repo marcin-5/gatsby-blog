@@ -1,6 +1,7 @@
 ---
 type: "config"
-logo: "../images/blog-logo.svg"
+logodm: "../images/blog-logo-dm.svg"
+logolm: "../images/blog-logo-lm.svg"
 menu:
   - id: "menu-item-1"
     name: "About"
